@@ -258,7 +258,8 @@ Use it for slippage in any week. If you are on time, start Arena A early: pick u
 
 Arena A (the next two months) is mostly small contributions, learning that produces artifacts, and networking. By the end of it, you should have agreed on one anchor non-trivial target in its issue thread. Arena B closes the posting qualifications and interview prep while the anchor contribution is in review. The depth phase after that is where you build the strongest evidence.
 
----
+wmctrl -a "Terminal" || gnome-terminal
+----
 
 ## Appendix A: Oracle test starter (adapt the names to your modules)
 
