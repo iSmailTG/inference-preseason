@@ -4,7 +4,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from miniengine.layers import MyRMSNorm
 
-class MyAttn(nn.Module):
+class MyAttention(nn.Module):
   def __init__(self, hidden_size, num_heads, num_kv_heads, head_dim, eps, bias=False):
     super().__init()
 
