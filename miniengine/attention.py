@@ -6,7 +6,7 @@ from miniengine.layers import MyRMSNorm
 
 class MyAttention(nn.Module):
   def __init__(self, hidden_size, num_heads, num_kv_heads, head_dim, eps, bias=False):
-    super().__init()
+    super().__init__()
 
     assert num_heads % num_kv_heads == 0
 
