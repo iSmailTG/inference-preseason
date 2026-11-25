@@ -17,10 +17,10 @@ class MyAttention(nn.Module):
     self.num_kv_groups = num_heads // num_kv_heads
     self.scale = head_dim ** -0.5
 
-    self.q_proj = nn.Linear(hidden_size, self.num_heads * self.head_dim, bias=bias)
-    self.k_proj = nn.Linear(hidden_size, self.num_kv_heads * self.head_dim, bias=bias)
-    self.v_proj = nn.Linear(hidden_size, self.num_kv_heads * self.head_dim, bias=bias)
-    self.o_proj = nn.Linear(self.num_heads * self.head_dim, hidden_size, bias=bias)
+    self.q_proj = nn.Linear(hidden_size, num_heads * head_dim, bias=bias)
+    self.k_proj = nn.Linear(hidden_size, num_kv_heads * head_dim, bias=bias)
+    self.v_proj = nn.Linear(hidden_size, num_kv_heads * head_dim, bias=bias)
+    self.o_proj = nn.Linear(num_heads * head_dim, hidden_size, bias=bias)
 
     self.q_norm = MyRMSNorm(head_dim, eps)
     self.k_norm = MyRMSNorm(head_dim, eps)
