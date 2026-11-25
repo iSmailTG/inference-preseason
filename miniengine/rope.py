@@ -6,7 +6,7 @@ import torch.nn as nn
 class MyRotaryEmbedding(nn.Module):
   def __init__(self, head_dim: int, theta: float):
     super().__init__()
-    inv_freq = 1.0 / (theta ** (torch.arange(0, head_dim, 2, torch.float32) / head_dim))
+    inv_freq = 1.0 / (theta ** (torch.arange(0, head_dim, 2, dtype= torch.float32) / head_dim))
     self.register_buffer('inv_freq', inv_freq, persistent=False)
 
   @torch.no_grad()
