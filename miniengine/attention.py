@@ -26,7 +26,7 @@ class MyAttention(nn.Module):
     self.k_norm = MyRMSNorm(head_dim, eps)
 
 
-  def forward(self, x, positions, cos, sin):
+  def forward(self, x, positions, cos=None, sin=None):
 
     B, S, _ = x.shape
 
