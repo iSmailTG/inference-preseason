@@ -13,4 +13,4 @@ class MyDecoderLayer(nn.Module):
 
   def forward(self, x, positions, cos, sin):
     h = x + self.self_attn(self.input_layernorm(x), positions, cos, sin)
-    return h + self.mlp(self.post_attention_laternorm(h))
+    return h + self.mlp(self.post_attention_layernorm(h))
