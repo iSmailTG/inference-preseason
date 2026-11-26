@@ -24,7 +24,6 @@ class MyDecoderLayer(nn.Module):
       stream = x + residual
 
     attn_write = self.self_attn(self.input_layernorm(stream), positions, cos, sin)      
-    h = stream + attn_write
 
-    mlp_write = self.mlp(self.post_attention_layernorm(h))
-    return mlp_write, h
+    mlp_write = self.mlp(self.post_attention_layernorm(stream + attn_write))
+    return mlp_write, stream + attn_write
