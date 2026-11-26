@@ -1,5 +1,5 @@
 import torch
-from torch import torch.nn as nn
+import torch.nn as nn
 from miniengine.layers import MyRMSNorm, MySWiGLU
 from miniengine.attention import MyAttention
 
