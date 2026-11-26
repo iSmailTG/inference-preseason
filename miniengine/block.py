@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from miniengine.layers import MyRMSNorm, MySWiGLU
+from miniengine.layers import MyRMSNorm, MySwiGLU
 from miniengine.attention import MyAttention
 
 class MyDecoderLayer(nn.Module):
@@ -9,7 +9,7 @@ class MyDecoderLayer(nn.Module):
     self.input_layernorm = MyRMSNorm(hidden_size, eps)
     self.self_attn = MyAttention(hidden_size, num_heads, num_kv_heads, head_dim)
     self.post_attention_layernorm = MyRMSNorm(hidden_size, eps)
-    self.mlp = MySWiGLU(hidden_size, intermediate_size)
+    self.mlp = MySwiGLU(hidden_size, intermediate_size)
 
 
   def forward(self, x, positions, cos, sin):
